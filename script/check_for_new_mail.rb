@@ -18,7 +18,8 @@ source.examine 'Inbox/TODO/Urgent'
 source.search(["ALL"]).each do |message_id|
   envelope = source.fetch(message_id, "ENVELOPE")[0].attr["ENVELOPE"]
   puts "#{envelope.from[0].name}: \t#{envelope.subject}"
-  #break
+  p envelope
+  break
 end
  
 source.logout
