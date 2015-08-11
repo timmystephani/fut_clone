@@ -18,7 +18,7 @@ Net::SMTP.start('smtp.amazon.com', 25) do |smtp|
 From: <#{FROM_EMAIL}>
 To: <#{message.to_email}>
 Subject: #{message.subject}
-
+Content-Type: text/html
 
 #{message.body}
 END_OF_MESSAGE
@@ -29,7 +29,7 @@ END_OF_MESSAGE
     smtp.send_message message_text, FROM_EMAIL, message.to_email
 
     message.sent_at = DateTime.now
-    #message.save
+    message.save
     message_count += 1
   end
 

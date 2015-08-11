@@ -3,6 +3,7 @@ require 'rubygems'
 require 'highline/import'
 require 'net/imap'
 require 'date'
+require 'mail'
 
 # For access to rails environment
 ENV['RAILS_ENV'] = "development"
@@ -40,12 +41,13 @@ source.select 'Inbox/FUT/Unprocessed'
 
 source.search(["ALL"]).each do |message_id|
   envelope = source.fetch(message_id, "ENVELOPE")[0].attr["ENVELOPE"]
-  body = source.fetch(message_id,'BODY[TEXT]')[0].attr['BODY[TEXT]']
+  body = source.fetch(message_id,'RFC822')[0].attr['RFC822']
+  mail = Mail.read_from_string body
 
   message = Message.new
 
   message.to_email = envelope.from[0].mailbox + '@' + envelope.from[0].host
-  message.body = body
+  message.body = mail.html_part.body.to_s
 
   message_sent_datetime = DateTime.strptime(envelope.date, '%a, %e %b %Y %H:%M:%S %z')
   delay = envelope.to[0].mailbox[envelope.to[0].mailbox.index('+')+1..-1]
