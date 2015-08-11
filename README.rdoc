@@ -1,3 +1,7 @@
-* Future
-* Possibly save message ID?
+## Setup
+
+* Make sure your MS Exchange mailbox has folders of Inbox/FUT/Processed and Inbox/FUT/Unprocessed
+* Set up rule to redirect messages with to address containing "+" to Inbox/FUT/Unprocessed
+* Send email to your username+3hours@amazon.com
+
 
