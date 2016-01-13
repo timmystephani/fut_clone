@@ -1,3 +1,7 @@
+## About
+
+* This was made to be a clone of followupthen.com so I could use a private server instead of FollowUpThen's. Currently only works with Microsoft Exchange, but should be easy enough to port it to another mail server.
+
 ## Setup
 
 * Make sure your MS Exchange mailbox has folders of Inbox/FUT/Processed and Inbox/FUT/Unprocessed
@@ -11,7 +15,4 @@
 * Handle BCC and CC
 * Set up cron jobs for both scripts
 
-## Done
-
-* Logic to only send mail if past send_datetime
 
