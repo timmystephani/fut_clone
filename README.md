@@ -1,6 +1,7 @@
 ## About
 
 * This was made to be a clone of followupthen.com so I could use a private server instead of FollowUpThen's. Currently only works with Microsoft Exchange, but should be easy enough to port it to another mail server.
+* Most of the "interesting" logic is in two files inside the script/ folder. I created the Rails project just to create a quick and easy way to save to the database and use the models provided by Rails.
 
 ## Setup
 
