@@ -5,3 +5,13 @@
 * Send email to your username+3hours@amazon.com
 
 
+## TODO
+
+* Make tests for various dates (i.e. 7days@amazon.com)
+* Handle BCC and CC
+* Set up cron jobs for both scripts
+
+## Done
+
+* Logic to only send mail if past send_datetime
+
